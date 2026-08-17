@@ -13,7 +13,24 @@
     * { box-sizing:border-box; } html { scroll-behavior:smooth; }
     body { margin:0; background:var(--cream); color:var(--ink); font-family:"DM Sans",sans-serif; }
     a { color:inherit; text-decoration:none; }
-    .nav { height:76px; padding:0 clamp(24px,5vw,76px); display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); position:absolute; z-index:3; width:100%; color:#fff; }
+    .nav {
+  height: 76px;
+  padding: 0 clamp(24px, 5vw, 76px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  color: #fff;
+  background: rgba(9, 24, 20, 0.42);
+  backdrop-filter: blur(8px);
+}
+
+.nav a {
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
     .brand { font-family:"DM Mono",monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
     .navlinks { display:flex; align-items:center; gap:26px; font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
     .navlinks .shop { padding:10px 14px; border:1px solid rgba(255,255,255,.75); }
