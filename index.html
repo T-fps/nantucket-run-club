@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nantucket Run Club — island miles, good company." />
+  <title>Nantucket Run Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#182821; --cream:#f3f0e8; --sea:#d7e5df; --line:rgba(24,40,33,.19); }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--cream); color:var(--ink); font-family:"DM Sans",sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .nav { height:76px; padding:0 clamp(24px,5vw,76px); display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); position:absolute; z-index:3; width:100%; color:#fff; }
+    .brand { font-family:"DM Mono",monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .navlinks { display:flex; align-items:center; gap:26px; font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+    .navlinks .shop { padding:10px 14px; border:1px solid rgba(255,255,255,.75); }
+    .hero { min-height:760px; position:relative; display:flex; flex-direction:column; justify-content:flex-end; padding:124px clamp(24px,8vw,128px) 70px; color:#fff; overflow:hidden; background:#405850; }
+    .hero::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(9,24,20,.68),rgba(9,24,20,.16) 70%),linear-gradient(0deg,rgba(9,24,20,.6),transparent 55%),url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=88") center/cover; filter:saturate(.72); }
+    .hero > * { position:relative; }
+    .eyebrow { font-family:"DM Mono",monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; margin:0 0 18px; }
+    h1 { font-family:"Playfair Display",serif; font-size:clamp(64px,11vw,154px); line-height:.84; font-weight:500; letter-spacing:-.065em; margin:0; max-width:950px; } h1 em { font-weight:500; }
+    .hero-bottom { display:flex; justify-content:space-between; align-items:flex-end; margin-top:48px; gap:24px; }
+    .hero-bottom p { max-width:360px; font-size:17px; line-height:1.55; margin:0; }
+    .arrow { width:45px; height:45px; border:1px solid rgba(255,255,255,.7); display:grid; place-items:center; font-size:21px; }
+    .intro { padding:110px clamp(24px,10vw,154px); display:grid; grid-template-columns:1fr 1.5fr; gap:10vw; border-bottom:1px solid var(--line); }
+    .label { font-family:"DM Mono",monospace; font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:#51645a; }
+    .intro h2 { font-family:"Playfair Display",serif; font-size:clamp(38px,5vw,68px); line-height:1.02; letter-spacing:-.05em; font-weight:500; margin:0 0 26px; }
+    .intro p { max-width:525px; font-size:18px; line-height:1.6; margin:0; }
+    .details { padding:0 clamp(24px,8vw,128px) 110px; }
+    .details-head { padding:82px 0 28px; display:flex; justify-content:space-between; align-items:end; border-bottom:1px solid var(--line); }
+    .details h2 { font-family:"Playfair Display",serif; font-size:48px; letter-spacing:-.04em; font-weight:500; margin:9px 0 0; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); }
+    .card { min-height:254px; padding:30px 28px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); } .card:first-child { border-left:1px solid var(--line); }
+    .card-number { font-family:"DM Mono",monospace; font-size:12px; color:#708077; }
+    .card h3 { font-family:"Playfair Display",serif; font-size:31px; letter-spacing:-.04em; font-weight:500; margin:50px 0 12px; }
+    .card p { margin:0; line-height:1.55; font-size:16px; }
+    .note { font-family:"DM Mono",monospace; font-size:12px!important; letter-spacing:.03em; margin-top:14px!important; color:#51645a; }
+    .time { font-family:"DM Mono",monospace; font-size:14px!important; letter-spacing:.04em; text-transform:uppercase; margin:0 0 14px!important; color:#51645a; }
+    .cta { background:var(--sea); padding:112px clamp(24px,8vw,128px); display:grid; grid-template-columns:1.2fr .8fr; gap:10vw; align-items:end; }
+    .cta h2 { font-family:"Playfair Display",serif; font-size:clamp(46px,7vw,92px); line-height:.91; letter-spacing:-.06em; font-weight:500; margin:16px 0 0; }
+    .actions { display:flex; flex-direction:column; gap:10px; }
+    .button { display:flex; align-items:center; justify-content:space-between; padding:18px; border:1px solid var(--ink); font-family:"DM Mono",monospace; font-size:12px; letter-spacing:.07em; text-transform:uppercase; transition:.2s; }
+    .button:hover { background:var(--ink); color:var(--cream); }
+    footer { background:var(--ink); color:var(--cream); padding:38px clamp(24px,8vw,128px); display:flex; justify-content:space-between; gap:24px; align-items:center; font-family:"DM Mono",monospace; font-size:11px; letter-spacing:.08em; text-transform:uppercase; } footer a { border-bottom:1px solid rgba(243,240,232,.5); padding-bottom:3px; }
+    @media (max-width:700px) { .navlinks a:not(.shop) { display:none; } .hero { min-height:680px; } .intro,.cta { grid-template-columns:1fr; gap:36px; } .grid { grid-template-columns:1fr; } .card,.card:first-child { border-left:1px solid var(--line); } .hero-bottom { margin-top:34px; } footer { flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <nav class="nav"><a class="brand" href="#top">Nantucket Run Club</a><div class="navlinks"><a href="#run">The run</a><a href="https://www.strava.com/clubs/1579925" target="_blank" rel="noopener">Strava ↗</a><a class="shop" href="https://nantucketrunclub.printful.me/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener">Shop ↗</a></div></nav>
+  <main id="top">
+    <section class="hero"><p class="eyebrow">Nantucket, Massachusetts · Est. 2024</p><h1>Run the<br><em>island.</em></h1><div class="hero-bottom"><p>Easy miles, salty air, and a good reason to start the day outside. All paces welcome.</p><a class="arrow" href="#run" aria-label="Explore the run">↓</a></div></section>
+    <section class="intro"><div class="label">01 / Our club</div><div><h2>Built for island miles and familiar faces.</h2><p>Started in 2024, Nantucket Run Club is a simple idea: meet up, move together, and enjoy the island from a different perspective. Whether you are training for something or just joining for the coffee afterward, there is a place for you here.</p></div></section>
+    <section class="details" id="run"><div class="details-head"><div><div class="label">02 / The details</div><h2>See you out there.</h2></div><div class="label">All paces · All welcome</div></div><div class="grid"><article class="card"><div class="card-number">01</div><h3>Meet</h3><p class="time">Saturdays · 9:30 AM</p><p>We meet Saturday mornings during the summer months. Check Instagram for the current start location.</p><p class="note">Summer schedule · location shared weekly.</p></article><article class="card"><div class="card-number">02</div><h3>Route</h3><p>Island routes that keep the scenery high and the logistics low. Expect a social, conversational run.</p><p class="note">Route details shared before each run.</p></article><article class="card"><div class="card-number">03</div><h3>Stay close</h3><p>Follow along for weekly details, route updates, and the people who make the miles better.</p><p class="note">No membership required.</p></article></div></section>
+    <section class="cta"><div><div class="label">03 / Join the club</div><h2>Find your<br>running people.</h2></div><div class="actions"><a class="button" href="https://www.instagram.com/nantucketrun/?hl=en" target="_blank" rel="noopener"><span>Follow on Instagram</span><span>↗</span></a><a class="button" href="https://www.strava.com/clubs/1579925" target="_blank" rel="noopener"><span>Join on Strava</span><span>↗</span></a><a class="button" href="https://nantucketrunclub.printful.me/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener"><span>Club goods</span><span>↗</span></a></div></section>
+  </main>
+  <footer><span>Nantucket Run Club · Est. 2024</span><a href="https://www.instagram.com/nantucketrun/?hl=en" target="_blank" rel="noopener">@nantucketrun</a></footer>
+</body>
+</html>
